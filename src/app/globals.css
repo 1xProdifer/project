@@ -1,0 +1,108 @@
+/* ===== Global Styles ===== */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #1e0b3a;
+  color: white;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+/* ===== Navbar Styles ===== */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: black;
+  padding: 15px 20px;
+}
+
+.navbar-logo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.navbar-title {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  gap: 15px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+
+/* ===== Container Styles ===== */
+.budget-tracker {
+  padding: 20px;
+}
+
+.balance {
+  font-size: 24px;
+  font-weight: bold;
+  background: #1a1a2e;
+  padding: 10px;
+  border-radius: 5px;
+  display: inline-block;
+  margin-bottom: 15px;
+}
+
+/* ===== Input Fields ===== */
+.input-container input {
+  padding: 10px;
+  margin: 5px;
+  width: 200px;
+  border-radius: 5px;
+  border: none;
+}
+
+button {
+  padding: 10px 15px;
+  margin: 5px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.add-income {
+  background: green;
+  color: white;
+}
+
+.add-expense {
+  background: red;
+  color: white;
+}
+
+.history-list {
+  list-style: none;
+  padding: 0;
+}
+
+.history-item {
+  padding: 5px;
+  font-size: 18px;
+}
+
+.income {
+  color: lightgreen;
+}
+
+.expense {
+  color: red;
+}
