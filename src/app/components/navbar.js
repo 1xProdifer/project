@@ -17,7 +17,7 @@ const Navbar = () => {
       <h1 className="navbar-title">Smart Budget Tracker</h1>
       <div className="nav-links">
         <Link href="/login">Login</Link>
-        <Link href="/contact">Contact Us</Link>
+        <Link href="/reminders">Reminders</Link>
         <Link href="/budget-goals">Budget Goals</Link>
       </div>
     </nav>
