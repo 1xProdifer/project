@@ -3,11 +3,8 @@ export default function Footer() {
       <footer className="footer">
         <div>
           <p>© 2025 Smart Budget Tracker</p>
-          <div className="socials">
-            {/* Placeholders for social icons */}
-            <a href="#">🔗</a>
-            <a href="#">📧</a>
-            <a href="#">🐦</a>
+          <div className="who-made-this">
+            <p>Made by - Adhyan & Ratika </p>
           </div>
           <div className="contact-info">
             <p>Email: contact@smarttracker.com</p>

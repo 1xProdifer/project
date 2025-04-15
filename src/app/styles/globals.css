@@ -38,7 +38,7 @@ a:hover {
 .logo-title {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 30rem; 
 }
 
 .logo {
@@ -49,7 +49,10 @@ a:hover {
   font-size: 1.5rem;
   font-weight: 600;
   color: white;
+  margin: 0;
+  padding-top: 5px; 
 }
+
 
 .nav-links {
   display: flex;
@@ -61,11 +64,11 @@ a:hover {
   color: white;
   padding: 2rem;
   text-align: center;
-}
-
-.socials a {
-  margin: 0 0.5rem;
-  font-size: 1.2rem;
+  font-size: 0.95rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border-top: 2px solid rgba(255, 255, 255, 0.08);
 }
 
 .contact-info {

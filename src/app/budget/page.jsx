@@ -23,7 +23,7 @@ class BudgetGoals extends Component {
 
     setTimeout(() => {
       alert('🚀 Tip: Set achievable goals to stay on track!');
-    }, 8000);
+    }, 15000);
   }
 
   async fetchGoals() {

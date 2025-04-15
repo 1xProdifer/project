@@ -21,7 +21,7 @@ export default function Home() {
   useEffect(() => {
     const timeout = setTimeout(() => {
       alert("💡 Reminder: Don’t forget to review your budget today!");
-    }, 10000);
+    }, 20000);
     return () => clearTimeout(timeout);
   }, []);
 
