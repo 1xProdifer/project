@@ -81,6 +81,15 @@ export default function Home() {
     }
   };
 
+  const handleClearForm = () => {
+    setDescription('');
+    setTransactionAmount('');
+    setTransactionType('income');
+    setAmount(1);
+    setConvertedAmount(null);
+    setTransactions([]);
+  };
+
   const convertCurrency = async () => {
     setIsLoading(true);
     try {
@@ -111,15 +120,14 @@ export default function Home() {
       <h2>Welcome to the Smart Budget Tracker</h2>
       <p>Track your expenses and stay financially smart.</p>
 
-      {/* Balance Section */}
       <div className="balance-box">
         <h3>Total Balance: ${totalBalance.toFixed(2)}</h3>
         <p>Total Income: ${totalIncome.toFixed(2)}</p>
         <p>Total Expenses: ${totalExpense.toFixed(2)}</p>
       </div>
 
-      {/* Form + Converter Side by Side */}
       <div className="form-currency-row">
+        {/* Form */}
         <div className="form-box">
           <h3>Add Transaction</h3>
           <input
@@ -138,9 +146,13 @@ export default function Home() {
             <option value="income">Income</option>
             <option value="expense">Expense</option>
           </select>
-          <button onClick={handleAddTransaction}>Add</button>
+          <div className="button-row">
+            <button onClick={handleAddTransaction}>Add</button>
+            <button onClick={handleClearForm} className="clear-btn">Clear</button>
+          </div>
         </div>
 
+        {/* Converter */}
         <div className="currency-box">
           <h3>Currency Converter</h3>
           <input
@@ -170,7 +182,7 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Transaction History */}
+      {/* Transactions */}
       <div className="transactions-box">
         <h3>Transaction History</h3>
         <div className="transaction-list">

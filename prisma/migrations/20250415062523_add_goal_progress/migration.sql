@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE "Goal" ADD COLUMN     "current" DOUBLE PRECISION NOT NULL DEFAULT 0;

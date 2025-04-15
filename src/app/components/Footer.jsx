@@ -10,7 +10,6 @@ export default function Footer() {
             <a href="#">🐦</a>
           </div>
           <div className="contact-info">
-            {/* You can edit this info */}
             <p>Email: contact@smarttracker.com</p>
           </div>
         </div>
