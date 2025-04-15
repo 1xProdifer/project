@@ -1,0 +1,153 @@
+.home-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    gap: 2rem;
+  }
+  
+  .currency-box,
+  .form-box,
+  .transactions-box,
+  .balance-box {
+    width: 100%;
+    max-width: 450px;
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 1.2rem;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .currency-box input,
+  .currency-box select,
+  .form-box input,
+  .form-box select {
+    width: 100%;
+    padding: 0.6rem;
+    border-radius: 8px;
+    border: none;
+    margin-top: 0.5rem;
+  }
+  
+  .currency-box button,
+  .form-box button {
+    width: 100%;
+    background-color: #6f00ff;
+    color: white;
+    border: none;
+    padding: 0.7rem;
+    border-radius: 8px;
+    font-weight: bold;
+    margin-top: 0.8rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .currency-box button:hover,
+  .form-box button:hover {
+    background-color: #8a2be2;
+  }
+  
+  .converted-result {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-top: 0.8rem;
+  }
+  
+  .transactions-box ul {
+    padding-left: 1rem;
+  }
+  
+  .transactions-box li {
+    margin-bottom: 0.6rem;
+    font-weight: 500;
+  }
+  
+  .transactions-box .income {
+    color: lightgreen;
+  }
+  
+  .transactions-box .expense {
+    color: #ff7070;
+  }
+  
+  .balance-box {
+    text-align: center;
+  }
+
+  .transaction-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  
+  .transaction-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 1rem;
+    border-left: 5px solid transparent;
+    border-radius: 10px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .transaction-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+  }
+  
+  .transaction-card.income {
+    border-left-color: lightgreen;
+  }
+  
+  .transaction-card.expense {
+    border-left-color: #ff7070;
+  }
+  
+  .transaction-card .left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .transaction-card .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: white;
+  }
+  
+  .transaction-card .desc {
+    font-weight: 600;
+    color: white;
+  }
+  
+  .transaction-card .type {
+    font-size: 0.8rem;
+    color: #cccccc;
+  }
+  
+  .transaction-card .amount {
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: white;
+  }
+  
+  .form-currency-row {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+  }
+  
+  .form-box,
+  .currency-box {
+    flex: 1;
+    min-width: 300px;
+    max-width: 450px;
+  }
+  
