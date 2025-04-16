@@ -30,7 +30,7 @@ export default function Home() {
       try {
         const res = await fetch(`https://api.freecurrencyapi.com/v1/latest?apikey=${API_KEY}`);
         const data = await res.json();
-        if (data && data.data) {
+        if (data?.data) {
           setCurrencies(Object.keys(data.data));
         }
       } catch (error) {
@@ -46,9 +46,15 @@ export default function Home() {
     try {
       const res = await fetch('/api/transactions');
       const data = await res.json();
-      setTransactions(data);
+      if (Array.isArray(data)) {
+        setTransactions(data);
+      } else {
+        console.error('Invalid data format:', data);
+        setTransactions([]);
+      }
     } catch (err) {
       console.error('Error fetching transactions:', err);
+      setTransactions([]);
     }
   };
 
@@ -62,9 +68,7 @@ export default function Home() {
     try {
       const res = await fetch('/api/transactions', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(newTransaction),
       });
 
@@ -105,13 +109,13 @@ export default function Home() {
     setIsLoading(false);
   };
 
-  const totalIncome = transactions
-    .filter((t) => t.type === 'income')
-    .reduce((acc, curr) => acc + curr.amount, 0);
+  const totalIncome = Array.isArray(transactions)
+    ? transactions.filter((t) => t.type === 'income').reduce((acc, curr) => acc + curr.amount, 0)
+    : 0;
 
-  const totalExpense = transactions
-    .filter((t) => t.type === 'expense')
-    .reduce((acc, curr) => acc + curr.amount, 0);
+  const totalExpense = Array.isArray(transactions)
+    ? transactions.filter((t) => t.type === 'expense').reduce((acc, curr) => acc + curr.amount, 0)
+    : 0;
 
   const totalBalance = totalIncome - totalExpense;
 
@@ -127,7 +131,6 @@ export default function Home() {
       </div>
 
       <div className="form-currency-row">
-        {/* Form */}
         <div className="form-box">
           <h3>Add Transaction</h3>
           <input
@@ -152,7 +155,6 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Converter */}
         <div className="currency-box">
           <h3>Currency Converter</h3>
           <input
@@ -182,11 +184,10 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Transactions */}
       <div className="transactions-box">
         <h3>Transaction History</h3>
         <div className="transaction-list">
-          {transactions.map((item) => (
+          {Array.isArray(transactions) && transactions.map((item) => (
             <div key={item.id} className={`transaction-card ${item.type}`}>
               <div className="left">
                 <span className="dot"></span>
