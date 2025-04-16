@@ -2,6 +2,7 @@
 
 import React, { Component } from 'react';
 import '../styles/budget.css';
+import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid } from 'recharts';
 
 class BudgetGoals extends Component {
   constructor(props) {
@@ -13,7 +14,7 @@ class BudgetGoals extends Component {
       quote: '',
       loading: false,
       error: null,
-      progressInputs: {}, // store progress input per goal
+      progressInputs: {},
     };
   }
 
@@ -184,6 +185,21 @@ class BudgetGoals extends Component {
             );
           })}
         </div>
+
+        {goals.length > 0 && (
+          <div className="chart-container">
+            <h3>📊 Goal Targets Overview</h3>
+            <ResponsiveContainer width="100%" height={250}>
+              <BarChart data={goals}>
+                <CartesianGrid strokeDasharray="3 3" />
+                <XAxis dataKey="name" />
+                <YAxis />
+                <Tooltip />
+                <Bar dataKey="amount" fill="#8884d8" />
+              </BarChart>
+            </ResponsiveContainer>
+          </div>
+        )}
       </section>
     );
   }
